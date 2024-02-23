@@ -1,0 +1,362 @@
+.main_conatiner {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin: 4vh;
+    width: 80%;
+    background-color: #FFFFFF;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.header {
+    background: #383E59;
+    height: 100px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    margin: 0;
+}
+
+.header h1 {
+    padding: 4vh;
+    margin: 0;
+    color: #FFFFFF;
+    font-family: 'FiraGO', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+.task-content {
+    height: 35vh;
+    margin: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.message-container {
+    margin-top: 5vh;
+    width: 100%;
+    text-align: center;
+}
+
+.message-container h3 {
+    font: 'FiraGO';
+    font-size: 20px;
+    font-weight: 550;
+    line-height: 26px;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #FFADAD;
+}
+
+.message-container p {
+    font: 'FiraGO';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #383E59;
+
+}
+
+.new_task {
+    width: 100%;
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: unset;
+
+}
+
+.new_task button {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: unset;
+    cursor: pointer;
+}
+
+.new_task p {
+    margin-left: 10px;
+    color: #383E59;
+    font-family: 'FiraGO', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+}
+
+
+.newTask-container {
+    margin-top: 4vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15vh;
+    
+}
+
+.newTask_container_edit {
+    margin-top: 4vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 8vh;
+}
+
+
+
+.task_name label {
+    font: 'FiraGO';
+    font-size: 16px;
+    font-weight: 590;
+    line-height: 19px;
+    letter-spacing: 0.2px;
+    text-align: left;
+    color: #383E59;
+}
+
+
+
+.task_name input {
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-radius: 40px;
+    background: #f3f2f2cb;
+    text-align: left;
+}
+
+.task_name input::placeholder {
+    margin-left: 5px;
+    font: 'FiraGO';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #040507;
+}
+
+.task_edit {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2vh;
+
+}
+
+.task_edit h3 {
+    color: #383E59;
+    font: 'FiraGO';
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.task_edit img {
+    width: 22px;
+    height: 23px;
+}
+
+.task_type,
+.task_add,
+.task_name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.task_type select {
+    padding-left: 2vh;
+    background: #f3f2f2dc;
+    border: none;
+    width: 350px;
+    height: 40px;
+    top: 541px;
+    left: 922px;
+    border-radius: 20px
+}
+
+.task_type option[value="current"] {
+    font: 'FiraGO';
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    background-color: #ffff;
+    color: #FFDF8C;
+
+}
+
+.task_type option[value="selected"] {
+    font: 'FiraGO';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #383E59;
+}
+
+.task_type option[value="done"] {
+    font: 'FiraGO';
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    background-color: #ffff;
+    color: #8FF4DB;
+
+}
+
+.task_add {
+    display: flex;
+    align-items: center;
+}
+
+.task_add button {
+    background: #383E59;
+    width: 210px;
+    height: 40px;
+    top: 541px;
+    left: 1332px;
+    border-radius: 22.5px;
+    color: #ffFf;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task_add button img {
+    margin-right: 5px;
+}
+
+.task_add :active {
+    background: #636e9c;
+
+}
+
+.error {
+    border: 1px solid red;
+    border-radius: 20px;
+}
+
+.grid-panel {
+    margin: 20px;
+}
+
+.grid-panel h2 {
+    color: #383E59;
+    font: 'FiraGO';
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-left: 2.5vh;
+
+}
+
+.task-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #383E59;
+    background: #FAFAFA;
+    border-radius: 15px;
+
+
+}
+
+.taskname_column,
+.taskstatus_column {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.current-status {
+    color: #FFDF8C;
+    font-weight: 600;
+
+}
+
+.done-status {
+    color: #8FF4DB;
+    font-weight: 600;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+    gap: 3vh;
+}
+
+.button-group button {
+    width: 80px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 2vh;
+}
+
+.grid_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 4vh
+}
+
+
+.correction-button {
+    margin-right: 8px;
+    background: #383E59;
+    border: none;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 35px;
+}
+
+.correction-button img {
+    width: 20px;
+    height: 20px;
+}
+
+.delete-button {
+    background: #FFADAD;
+    width: 150px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+
+    border-radius: 22.5px;
+
+
+}

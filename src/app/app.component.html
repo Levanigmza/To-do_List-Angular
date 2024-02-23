@@ -1,0 +1,123 @@
+<section class="main_conatiner">
+
+  <main>
+    <div class="header">
+      <h1>{{ title }}</h1>
+    </div>
+    <div class="task-content">
+      <div class="message-container" *ngIf="showMessage">
+        <h3>შეტყობინება !</h3>
+        <p>სამწუხაროდ დამატებული დავალებები ჯერ არ მოიძებნება. </p>
+      </div>
+
+      <div class="new_task" (click)="new_Task()">
+        <button>
+          <img src="../assets/docs_add_on_FILL0_wght400_GRAD0_opsz24 1.png" alt="button">
+          <p>ახალი დავალების დამატება</p>
+        </button>
+      </div>
+
+      <form class="newTask-container" *ngIf="createNewtask">
+        <div class="task_name" [ngClass]="{'error': taskNameError}">
+          <input type="text" id="taskName" [(ngModel)]="taskName" name="taskName"
+            placeholder="  შეიყვანეთ დასახელება" />
+        </div>
+
+        <div class="task_type" [ngClass]="{'error': taskTypeError}">
+          <select id="taskType" [(ngModel)]="taskType" name="taskType">
+            <option value selected="selected">აირჩიეთ დავალების სტატუსი</option>
+            <option value="current">მიმდინარე სტატუსი</option>
+            <option value="done">დასრულებული სტატუსი</option>
+          </select>
+        </div>
+
+
+        <div class="task_add">
+          <button type="button" (click)="addTask()">
+            <img src="../assets/add_FILL0_wght400_GRAD0_opsz24 3.png" alt="plus button">
+            <span>დამატება</span>
+          </button>
+        </div>
+
+
+      </form>
+      <form class="newTask_container_edit" *ngIf="edit_task">
+        <div class="task_edit">
+          <img src="../assets/edit_FILL0_wght400_GRAD0_opsz24 7.png" alt="correct button">
+          <h3>დავალების რედაქტირება</h3>
+        </div>
+
+        <div class="task_name" [ngClass]="{'error': taskNameError}">
+          <input type="text" id="taskName" [(ngModel)]="taskName" name="taskName"
+            placeholder="  შეიყვანეთ დასახელება" />
+        </div>
+
+        <div class="task_type" [ngClass]="{'error': taskTypeError}">
+          <select id="taskType" [(ngModel)]="taskType" name="taskType">
+            <option value selected="selected">აირჩიეთ დავალების სტატუსი</option>
+            <option value="current">მიმდინარე სტატუსი</option>
+            <option value="done">დასრულებული სტატუსი</option>
+          </select>
+        </div>
+
+
+        <div class="task_add">
+          <button type="button" (click)="savecorrected_Task(editedTask)">
+            <img src="../assets/Vector.png" alt="plus button">
+            <span>რედაქტირება</span>
+          </button>
+        </div>
+      </form>
+    </div>
+
+
+    <div class="grid-panel">
+      <h2>მიმდინარე დავალებები</h2>
+      <div *ngFor="let task of currentTasks" class="task-row">
+        <div class="taskname_column">{{ task.taskName }}</div>
+        <div class="taskstatus_column"
+          [ngClass]="{'current-status': task.statusName === 'მიმდინარე', 'done-status': task.statusName === 'დასრულებული'}">
+          {{ task.statusName }}</div>
+        <div class="grid_buttons">
+          <button class="correction-button" (click)="correctTask(task)">
+            <img src="../assets/Vector.png" alt="Correction Image">
+          </button>
+          <button class="delete-button" (click)="deleteTask(task)">წაშლა</button>
+        </div>
+      </div>
+      <div class="button-group">
+        <button (click)="changeCurrentTasksPage(-1)" [disabled]="currentTasksPage === 1">Previous</button>
+        {{ currentTasksPage }}
+        <button (click)="changeCurrentTasksPage(1)"
+          [disabled]="isNextButtonDisabled(currentTasks, currentTasksPage)">Next</button>
+      </div>
+    </div>
+
+    <div class="grid-panel">
+      <h2>დასრულებული დავალებები</h2>
+      <div *ngFor="let task of doneTasks" class="task-row">
+        <div class="taskname_column">{{ task.taskName }}</div>
+        <div class="taskstatus_column"
+          [ngClass]="{'current-status': task.statusName === 'მიმდინარე', 'done-status': task.statusName === 'დასრულებული'}">
+          {{ task.statusName }}</div>
+        <div class="grid_buttons">
+          <button class="correction-button" (click)="correctTask(task)">
+            <img src="../assets/Vector.png" alt="Correction Image">
+          </button>
+          <button class="delete-button" (click)="deleteTask(task)">წაშლა</button>
+        </div>
+
+      </div>
+      <div class="button-group">
+        <button (click)="changeDoneTasksPage(-1)" [disabled]="doneTasksPage === 1">Previous</button>
+        {{doneTasksPage }}
+        <button (click)="changeDoneTasksPage(1)"
+          [disabled]="isNextButtonDisabled(doneTasks, doneTasksPage)">Next</button>
+      </div>
+    </div>
+
+
+
+
+  </main>
+</section>
