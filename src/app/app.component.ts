@@ -95,6 +95,7 @@ export class AppComponent {
       this.taskService.addTask(task).subscribe(
         (response) => {
           console.log('Task added', response);
+        this.getTasks();
         },
         (error) => {
           console.error('Error', error);
